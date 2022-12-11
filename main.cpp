@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "./Pokemon/Pokemon.hpp"
+#include "./Pokedex/Pokedex.hpp"
 
 using namespace std;
 
@@ -22,6 +23,18 @@ int main(){
       for (int i = 0; i < pokemonSkills.size(); i++){
         cout << pokemonSkills[i] << endl;
       }
+
+
+      string user = "Ryan";
+
+      Pokedex userPokedex(user);
+
+      userPokedex.addPokemon(pokemon);
+      userPokedex.listPokemons();
+      
+      Pokemon pokemonSearch = userPokedex.getPokemon(name);
+      pokemonSearch.pokemonData();
+    
 
     return 0;
 }

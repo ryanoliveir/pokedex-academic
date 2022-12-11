@@ -25,7 +25,7 @@ Pokemon::Pokemon(std::string name, std::string type, std::string category, std::
 void Pokemon::pokemonData(){
     std::cout << "Pokemon Data" << std::endl;
     std::cout << "Name: " << this->name << std::endl;
-    std::cout << "Name: " << this->type << std::endl;
+    std::cout << "Type: " << this->type << std::endl;
     
     //todo: make a for to show skills
 
@@ -34,4 +34,8 @@ void Pokemon::pokemonData(){
 
 std::vector<std::string> Pokemon::getSkills(){
     return skills;
+}
+
+std::string Pokemon::getName(){
+    return this->name;
 }

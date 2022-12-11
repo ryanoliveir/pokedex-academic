@@ -15,4 +15,5 @@ class Pokemon {
         Pokemon(std::string name, std::string type, std::string category, std::vector<std::string> skills);
         void pokemonData();
         std::vector<std::string> getSkills();
+        std::string getName();
 };
