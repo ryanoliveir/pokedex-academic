@@ -41,5 +41,4 @@ std::string Pokemon::getName(){
     return this->name;
 }
 
-
 void Pokemon::evolve(){};

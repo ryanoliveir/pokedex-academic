@@ -2,14 +2,15 @@
 #include <string>
 #include <vector>
 
-// #include "./Pokemon/Pokemon.hpp"
-// #include "./Pokedex/Pokedex.hpp"
 #include "./LengendaryType/LengendaryType.hpp"
 #include "./NormalType/NormalType.hpp"
+#include "./Evolution/Evolution.hpp"
 
 using namespace std;
 
 int main(){
+
+      Evolution evolution;
 
       string name = "Pikachu";
       string type = "Electric";
@@ -31,9 +32,12 @@ int main(){
 
         pokemonSkills = pokemon.getSkills();
 
-        for (int i = 0; i < pokemonSkills.size(); i++){
-            cout << pokemonSkills[i] << endl;
-        }
+        evolution.evolveVerification(&pokemon);
+        evolution.evolveVerification(&pokemon2);
+
+        // for (int i = 0; i < pokemonSkills.size(); i++){
+        //     cout << pokemonSkills[i] << endl;
+        // }
 
 
     //   string user = "Ryan";

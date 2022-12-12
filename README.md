@@ -4,7 +4,7 @@
 To compile
 
 ```bash
-$ g++ -o main ./*.cpp Pokemon/*.cpp
+$ g++ -o main ./*.cpp Pokemon/*.cpp Pokedex/*.cpp LengendaryType/*.cpp ./NormalType/*.cpp ./Evolution/*.cpp
 ```
 
 
