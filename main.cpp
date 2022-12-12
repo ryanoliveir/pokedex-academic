@@ -26,8 +26,9 @@ int main()
 
     vector<Pokemon> pokemonsAvailable;
 
-    string user;
+    Pokedex pokedex;
 
+    string user;
     header();
 
     do
@@ -78,7 +79,7 @@ int main()
             cout << "[*] Name: ";
             user = input();
 
-            Pokedex pokedex(user);
+            pokedex.setUserName(user);
 
             cout << "[+] Congratulations!, you now have a pokedex [+]" << endl;
             enterInput();
@@ -87,19 +88,34 @@ int main()
             break;
         }
         case 3:
-            for (int i = 0; i < pokemonsAvailable.size(); i++)
-            {
-                pokemonsAvailable[i].pokemonData();
+
+            if (pokemonsAvailable.size() == 0) {
+                cout << "[-] No one pokemon registred" << endl;
+                enterInput();
+                clear();
+            } else {
+                for (int i = 0; i < pokemonsAvailable.size(); i++) {
+                    pokemonsAvailable[i].pokemonData();
+                }
+                enterInput();
+                clear();
             }
-            enterInput();
-            clear();
 
             break;
         case 4:
 
+            cout << "[4] My Pokedex" << endl;
+            cout << "[+] User: " << pokedex.getUserName() << endl;
+            cout << "[+] Pokemons numbers: " << pokedex.pokemonsNumber() << endl;
+
+            if( pokedex.pokemonsNumber() > 0 ){
+                pokedex.listPokemons();
+            }
+             enterInput();
+            clear();
+
             break;
         case 5:
-            
 
             break;
         case 6:

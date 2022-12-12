@@ -9,6 +9,8 @@ Pokedex::Pokedex(std::string userName):
 
 }
 
+Pokedex::Pokedex(){}
+
 void Pokedex::registerPokemon(Pokemon pokemon){
     pokemons.push_back(pokemon);
     // pokemonNumber += 1;
@@ -49,4 +51,12 @@ Pokemon Pokedex::getPokemon(std::string pokemonName){
             return pokemons[i];
         }
     }
+}
+
+std::string Pokedex::getUserName(){
+    return userName;
+}
+
+void Pokedex::setUserName(std::string userName){
+    this->userName = userName;
 }

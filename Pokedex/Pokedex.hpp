@@ -16,5 +16,7 @@ class Pokedex{
         int pokemonsNumber();
         std::vector<Pokemon> getPokemons();
         Pokemon getPokemon(std::string pokemonName);
+        std::string getUserName();
+        void setUserName(std::string userName);
         // std::pair<std::string, Pokemon> getPokemon(std::string pokemonName);
 };
