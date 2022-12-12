@@ -9,7 +9,8 @@ class Pokedex{
         std::vector<Pokemon> pokemons;
     public:
         Pokedex(std::string userName);
-        void addPokemon(Pokemon pokemon);
+        Pokedex();
+        void registerPokemon(Pokemon pokemon);
         void listPokemons();
 
         int pokemonsNumber();

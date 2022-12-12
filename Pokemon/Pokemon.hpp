@@ -4,7 +4,7 @@
 
 class Pokemon {
 
-    private:
+    protected:
         std::string name;
         std::string type;
         std::string category;
@@ -13,7 +13,10 @@ class Pokemon {
     public:
         Pokemon(std::string name, std::string type, std::string category);
         Pokemon(std::string name, std::string type, std::string category, std::vector<std::string> skills);
+        Pokemon();
         void pokemonData();
         std::vector<std::string> getSkills();
         std::string getName();
+        
+        virtual void evolve();
 };

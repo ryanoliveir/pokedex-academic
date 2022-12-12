@@ -9,7 +9,7 @@ Pokedex::Pokedex(std::string userName):
 
 }
 
-void Pokedex::addPokemon(Pokemon pokemon){
+void Pokedex::registerPokemon(Pokemon pokemon){
     pokemons.push_back(pokemon);
     // pokemonNumber += 1;
 
