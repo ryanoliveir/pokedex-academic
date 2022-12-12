@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 
+#include "./Pokedex/Pokedex.hpp"
 #include "./LengendaryType/LengendaryType.hpp"
 #include "./NormalType/NormalType.hpp"
 #include "./Evolution/Evolution.hpp"
@@ -24,6 +25,8 @@ int main()
     vector<string> skills;
 
     vector<Pokemon> pokemonsAvailable;
+
+    string user;
 
     header();
 
@@ -49,7 +52,7 @@ int main()
             name = input();
             cout << "[*] Type: ";
             type = input();
-            cout << "[4] Category: ";
+            cout << "[*] Category: ";
             category = input();
             cout << "[*] Normal(n) or Lendary(l) ?: ";
             level = input();
@@ -70,10 +73,22 @@ int main()
 
             break;
         case 2:
+        {
+            cout << "[2] Register Pokedex" << endl;
+            cout << "[*] Name: ";
+            user = input();
+
+            Pokedex pokedex(user);
+
+            cout << "[+] Congratulations!, you now have a pokedex [+]" << endl;
+            enterInput();
+            clear();
 
             break;
+        }
         case 3:
-            for (int i = 0; i < pokemonsAvailable.size(); i++) {
+            for (int i = 0; i < pokemonsAvailable.size(); i++)
+            {
                 pokemonsAvailable[i].pokemonData();
             }
             enterInput();
@@ -84,6 +99,7 @@ int main()
 
             break;
         case 5:
+            
 
             break;
         case 6:
@@ -124,7 +140,8 @@ string input()
     return data;
 }
 
-void enterInput(){
+void enterInput()
+{
     cout << "\nPress Enter to Continue";
     _flushall();
     cin.ignore();
