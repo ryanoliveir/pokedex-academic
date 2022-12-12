@@ -21,5 +21,5 @@ LengendaryType::LengendaryType(std::string name, std::string type, std::string c
 LengendaryType::LengendaryType(){}
 
 void LengendaryType::evolve(){
-    std::cout << "evolve" << std::endl;
+    std::cout << "not evolve" << std::endl;
 }

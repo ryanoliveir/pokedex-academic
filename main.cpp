@@ -5,6 +5,7 @@
 // #include "./Pokemon/Pokemon.hpp"
 // #include "./Pokedex/Pokedex.hpp"
 #include "./LengendaryType/LengendaryType.hpp"
+#include "./NormalType/NormalType.hpp"
 
 using namespace std;
 
@@ -15,8 +16,8 @@ int main(){
       string category = "mouse";
       vector<string> skills = {"Thunder Shock", "Wild Charge", "Iron Tail"};
       vector<string> pokemonSkills;
-    //   Pokemon pokemon(name, type, category, skills);
-
+      NormalType pokemon(name, type, category, skills);
+    
 
       string name2 = "Charmander";
       string type2 = "Fire";
@@ -24,9 +25,9 @@ int main(){
       vector<string> skills2 = {"Ember", "Flamethrower", "Flame Burst"};
     //   Pokemon pokemon2(name2, type2, category2, skills2);  
 
-        LengendaryType pokemon(name2, type2, category2, skills2); 
+        LengendaryType pokemon2(name2, type2, category2, skills2); 
         pokemon.pokemonData();
-    //   pokemon2.pokemonData();
+        // pokemon2.pokemonData();
 
         pokemonSkills = pokemon.getSkills();
 
