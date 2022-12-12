@@ -24,7 +24,7 @@ Pokemon::Pokemon(std::string name, std::string type, std::string category, std::
 Pokemon::Pokemon(){}
 
 void Pokemon::pokemonData(){
-    std::cout << "Pokemon Data" << std::endl;
+    std::cout << "[POKEMON DATA]" << std::endl;
     std::cout << "Name: " << this->name << std::endl;
     std::cout << "Type: " << this->type << std::endl;
     

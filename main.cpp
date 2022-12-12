@@ -8,50 +8,132 @@
 
 using namespace std;
 
-int main(){
+void header();
+void clear();
+void enterInput();
+string input();
 
-      Evolution evolution;
+int main()
+{
+    int menuOption;
 
-      string name = "Pikachu";
-      string type = "Electric";
-      string category = "mouse";
-      vector<string> skills = {"Thunder Shock", "Wild Charge", "Iron Tail"};
-      vector<string> pokemonSkills;
-      NormalType pokemon(name, type, category, skills);
-    
+    string name;
+    string type;
+    string category;
+    string level;
+    vector<string> skills;
 
-      string name2 = "Charmander";
-      string type2 = "Fire";
-      string category2 = "lizard";
-      vector<string> skills2 = {"Ember", "Flamethrower", "Flame Burst"};
-    //   Pokemon pokemon2(name2, type2, category2, skills2);  
+    vector<Pokemon> pokemonsAvailable;
 
-        LengendaryType pokemon2(name2, type2, category2, skills2); 
-        pokemon.pokemonData();
-        // pokemon2.pokemonData();
+    header();
 
-        pokemonSkills = pokemon.getSkills();
+    do
+    {
 
-        evolution.evolveVerification(&pokemon);
-        evolution.evolveVerification(&pokemon2);
+        cout << "[1] Register Pokemon" << endl;
+        cout << "[2] Register Pokedex" << endl;
+        cout << "[3] List Pokemons" << endl;
+        cout << "[4] My Pokedex" << endl;
+        cout << "[5] Scan Pokemon" << endl;
+        cout << "[6] Pokemon Data" << endl;
+        cout << "[7] Exit" << endl;
 
-        // for (int i = 0; i < pokemonSkills.size(); i++){
-        //     cout << pokemonSkills[i] << endl;
-        // }
+        cin >> menuOption;
+        clear();
 
+        switch (menuOption)
+        {
+        case 1:
+            cout << "[1] Register Pokemon" << endl;
+            cout << "[*] Name: ";
+            name = input();
+            cout << "[*] Type: ";
+            type = input();
+            cout << "[4] Category: ";
+            category = input();
+            cout << "[*] Normal(n) or Lendary(l) ?: ";
+            level = input();
 
-    //   string user = "Ryan";
+            if (level == "n")
+            {
+                NormalType pokemon(name, type, category);
+                pokemonsAvailable.push_back(pokemon);
+            }
+            else if (level == "l")
+            {
+                LengendaryType pokemon(name, type, category);
+                pokemonsAvailable.push_back(pokemon);
+            }
+            clear();
+            // cout << "[5] skills" << endl;
+            // skills = vector_input();
 
-    //   Pokedex userPokedex(user);
+            break;
+        case 2:
 
-    //   userPokedex.registerPokemon(pokemon);
-    //   userPokedex.registerPokemon(pokemon2);
-    //   userPokedex.listPokemons();
-      
-    //   Pokemon pokemonSearch = userPokedex.getPokemon(name);
-    //   pokemonSearch.pokemonData();
-    
+            break;
+        case 3:
+            for (int i = 0; i < pokemonsAvailable.size(); i++) {
+                pokemonsAvailable[i].pokemonData();
+            }
+            enterInput();
+            clear();
 
+            break;
+        case 4:
+
+            break;
+        case 5:
+
+            break;
+        case 6:
+
+            break;
+        case 7:
+            exit(0);
+            break;
+
+        default:
+            break;
+        }
+
+    } while (menuOption != 7);
 
     return 0;
 }
+
+void header()
+{
+    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    cout << "|              POKEDEX SYSTEM                   |" << endl;
+    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    cout << endl;
+}
+
+void clear()
+{
+    system("clear || cls");
+    header();
+}
+
+string input()
+{
+    string data;
+    _flushall();
+    cin >> data;
+    return data;
+}
+
+void enterInput(){
+    cout << "\nPress Enter to Continue";
+    _flushall();
+    cin.ignore();
+}
+
+// string vector_input()
+// {
+//     vector<string> data;
+//     _flushall();
+//     cin >> data;
+//     return data;
+// }

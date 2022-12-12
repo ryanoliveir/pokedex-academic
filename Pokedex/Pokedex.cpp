@@ -18,7 +18,7 @@ void Pokedex::registerPokemon(Pokemon pokemon){
 void Pokedex::listPokemons(){
     for (int i = 0; i < pokemons.size(); i++)
     {   
-        std::cout << "INFO ID: " << i + 1 << "\n" << std::endl;
+        std::cout << "#" << i + 1 << "\n" << std::endl;
         pokemons[i].pokemonData();
     }
     
