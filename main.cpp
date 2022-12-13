@@ -164,7 +164,7 @@ int main()
             for(int i = 0; i < pokemonsInPokedex.size(); i++){
                 if(pokemonsInPokedex[i].getName() == pokemonName) {
                     cout << "[*] find "<< endl;
-                    evolve.evolveVerification(pokemonsInPokedex[i]);
+                    evolve.evolveVerification(&pokemonsInPokedex[i]);
                     
                 }
             }

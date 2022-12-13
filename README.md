@@ -7,6 +7,29 @@ To compile
 $ g++ -o main ./*.cpp Pokemon/*.cpp Pokedex/*.cpp LengendaryType/*.cpp ./NormalType/*.cpp ./Evolution/*.cpp
 ```
 
+Data to test
+```txt
+
+Name: Pikachu
+Type: Eletric
+Category: Mouse
+Normal(n) or Lendary(l) ?: n
+
+Name: Bulbasaur
+Type: Grass/Poison
+Category: Overgrow
+Normal(n) or Lendary(l) ?: n
+
+Name: Articuno
+Type: Ice
+Category: Pressure
+Normal(n) or Lendary(l) ?: l
+
+```
+
+
+
+
 
 ```c++
 
