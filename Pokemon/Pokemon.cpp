@@ -24,7 +24,6 @@ Pokemon::Pokemon(std::string name, std::string type, std::string category, std::
 Pokemon::Pokemon(){}
 
 void Pokemon::pokemonData(){
-    std::cout << "[POKEMON DATA]" << std::endl;
     std::cout << "Name: " << this->name << std::endl;
     std::cout << "Type: " << this->type << std::endl;
     
@@ -41,4 +40,6 @@ std::string Pokemon::getName(){
     return this->name;
 }
 
-void Pokemon::evolve(){};
+void Pokemon::evolve() const{
+
+};

@@ -18,5 +18,5 @@ class Pokemon {
         std::vector<std::string> getSkills();
         std::string getName();
         
-        virtual void evolve();
+        virtual void evolve() const;
 };

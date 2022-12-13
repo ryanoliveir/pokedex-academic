@@ -13,6 +13,7 @@ void header();
 void clear();
 void enterInput();
 string input();
+void listPokemonsAvailable(vector<Pokemon> pokemonsAvailable);
 
 int main()
 {
@@ -25,10 +26,15 @@ int main()
     vector<string> skills;
 
     vector<Pokemon> pokemonsAvailable;
-
+    vector<Pokemon> pokemonsInPokedex;
+    
     Pokedex pokedex;
-
+    Evolution evolve;
     string user;
+    string pokemonName;
+    string pokemonSelected;
+
+
     header();
 
     do
@@ -39,7 +45,7 @@ int main()
         cout << "[3] List Pokemons" << endl;
         cout << "[4] My Pokedex" << endl;
         cout << "[5] Scan Pokemon" << endl;
-        cout << "[6] Pokemon Data" << endl;
+        cout << "[6] Check Evolution" << endl;
         cout << "[7] Exit" << endl;
 
         cin >> menuOption;
@@ -89,12 +95,16 @@ int main()
         }
         case 3:
 
-            if (pokemonsAvailable.size() == 0) {
+            if (pokemonsAvailable.size() == 0)
+            {
                 cout << "[-] No one pokemon registred" << endl;
                 enterInput();
                 clear();
-            } else {
-                for (int i = 0; i < pokemonsAvailable.size(); i++) {
+            }
+            else
+            {
+                for (int i = 0; i < pokemonsAvailable.size(); i++)
+                {
                     pokemonsAvailable[i].pokemonData();
                 }
                 enterInput();
@@ -106,19 +116,60 @@ int main()
 
             cout << "[4] My Pokedex" << endl;
             cout << "[+] User: " << pokedex.getUserName() << endl;
-            cout << "[+] Pokemons numbers: " << pokedex.pokemonsNumber() << endl;
+            cout << "[+] Pokemons number: " << pokedex.pokemonsNumber() << endl;
 
-            if( pokedex.pokemonsNumber() > 0 ){
+            if (pokedex.pokemonsNumber() > 0)
+            {
                 pokedex.listPokemons();
             }
-             enterInput();
+            enterInput();
             clear();
 
             break;
         case 5:
 
+            cout << "[5] Scan Pokemon" << endl;
+            cout << "[*] Select an Pokemon Name to scan" << endl;
+            listPokemonsAvailable(pokemonsAvailable);
+            
+            cout << "[*] Pokemon Name: ";
+            pokemonSelected = input();
+
+            for (int i = 0; i < pokemonsAvailable.size(); i++)
+            {   
+                if (pokemonsAvailable[i].getName() == pokemonSelected) {
+                    pokedex.registerPokemon(pokemonsAvailable[i]);
+
+                    cout << "[+] Pokemon added in your Pokedex !" << endl;
+                }
+                enterInput();
+                clear();
+               
+            }
+
+            // enterInput();
+            // clear();
+
+        
             break;
         case 6:
+
+            // Todo: check virtual method
+            cout << "[6] Check Evolution" << endl;
+            cout << "[*] Name of a pokemon from your pokedex: ";
+            pokemonName = input();
+
+            pokemonsInPokedex = pokedex.getPokemons();
+
+            for(int i = 0; i < pokemonsInPokedex.size(); i++){
+                if(pokemonsInPokedex[i].getName() == pokemonName) {
+                    cout << "[*] find "<< endl;
+                    evolve.evolveVerification(pokemonsInPokedex[i]);
+                    
+                }
+            }
+            enterInput();
+            clear();
 
             break;
         case 7:
@@ -161,6 +212,26 @@ void enterInput()
     cout << "\nPress Enter to Continue";
     _flushall();
     cin.ignore();
+}
+
+void listPokemonsAvailable(vector<Pokemon> pokemonsAvailable)
+{
+    if (pokemonsAvailable.size() == 0)
+    {
+        cout << "[-] No one pokemon registred" << endl;
+        enterInput();
+        clear();
+    }
+    else
+    {
+        for (int i = 0; i < pokemonsAvailable.size(); i++)
+        {   
+            std::cout << "\n[POKEMON #" << i+1 << "]" << std::endl;
+            pokemonsAvailable[i].pokemonData();
+        }
+
+        
+    }
 }
 
 // string vector_input()
