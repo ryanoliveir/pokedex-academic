@@ -28,8 +28,7 @@ Normal(n) or Lendary(l) ?: l
 ```
 
 
-
-
+Initial tests of Class e methods: Everything working
 
 ```c++
 
